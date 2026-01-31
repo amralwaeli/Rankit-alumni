@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 export function TopDonorProspects() {
-  const topProspects = alumniData
+  const topProspects = (alumniData || [])
     .filter((a) => a.wealthIndicator === 'high' && a.givingLikelihood > 70)
     .sort((a, b) => b.givingLikelihood - a.givingLikelihood)
     .slice(0, 5);
